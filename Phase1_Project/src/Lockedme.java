@@ -80,7 +80,7 @@ public class Lockedme {
        
        switch(num){    
        case 1: System.out.println("Adding a File"); 
-              Add_File(); 
+               Add_File(); 
                break;  
        case 2: System.out.println("Deleting a File");  
                Delete_File();
@@ -125,45 +125,43 @@ public class Lockedme {
     	 
      }
      void Delete_File()  {
-    	 try {
-    		 
-    	 System.out.println("Please Enter File Name you want to Delete:");
-    	 String ad=sc.next().toLowerCase().trim();
-    	 //assertTrue(ad.toLowerCase().contains(dest.toLowerCase()));
-    	 File file = new File("C:\\Users\\Mansimran Kaur\\Documents\\"+ ad);
-    	 boolean result= f.exists(); 
-    	 if(result==true) {
-    		 System.out.println(file.delete());
-    		 System.out.println("file"+ ad+ " Deleted from : "+file.getCanonicalPath()); 
-    		 
-    	 }
-    	 else
-    	 {
-    		 System.out.println("File you want to delete is not Found"); 
-    	 }
-    	 Sub_Menu();
-    	 }catch(Exception e)
+    	
+    	 try{
+    		   File Mainpath= f.getCanonicalFile();
+    		   String ad=sc.next().trim();
+    		    File filepath = new File(Mainpath +"/"+ad);
+    	        String[] list = Mainpath.list();
+    	        for (String file: list) {
+    	            if (ad.equals(file) && filepath.delete()) {
+    	                System.out.println("File " + ad + " deleted from " + Mainpath);
+    	                Sub_Menu();
+    	            }
+    	        }
+    	        System.out.println("Delete Operation failed. FILE NOT FOUND");
+    	        Sub_Menu();
+         }
+         catch(Exception e)
     	 {
     		 e.printStackTrace(); 
     	 }
      }
      void Search_File() {
     	 try {
-    		 
+    	 File Mainpath= f.getCanonicalFile();
     	 System.out.println("Please Enter File Name you want to Search:");
-    	 String ad=sc.next().toLowerCase().trim();
-    	 File file = new File("C:\\Users\\Mansimran Kaur\\Documents\\"+ ad);
-    	 boolean result= f.exists(); 
-    	 if(result==true) {
-    		 
-         System.out.println("FOUND:"+file.getCanonicalPath()); 	 
+    	 String ad=sc.next().trim();
+    	 File filepath = new File(Mainpath +"/"+ad);
+    	 String[] list = Mainpath.list();
+         for (String file: list) {
+             if (ad.equals(file)) {
+                 System.out.println("FOUND : File " + ad + " exists at " + Mainpath);
+                 Sub_Menu();
+             }
+         }
+         System.out.println("File NOT found ");
+         Sub_Menu();
     	 }
-    	 else
-    	 {
-    		 System.out.println("File not Found"); 
-    	 }
-    	 Sub_Menu();
-    	 }catch(Exception e)
+    	 catch(Exception e)
     	 {
     		 e.printStackTrace(); 
     	 }
