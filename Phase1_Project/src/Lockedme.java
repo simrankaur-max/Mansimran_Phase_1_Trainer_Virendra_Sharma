@@ -11,12 +11,12 @@ public class Lockedme {
 		 Lockedme lm = new  Lockedme();
 		
         
-        System.out.println("*****");
-        System.out.println("DEVELOPED BY MANSIMRAN KAUR");
-        System.out.println("*****");
+        System.out.println("***********************************************");
+        System.out.println("******    DEVELOPED BY MANSIMRAN KAUR    ******");
+        System.out.println("***********************************************");
         
-        System.out.println("*  LOCKED ME. COM  **");
-        System.out.println("*****");
+        System.out.println("***  LOCKEDME.COM   ***");
+        System.out.println("_______________________");
         System.out.println("Directory: C:\\Users\\Mansimran Kaur\\Documents\n");
         lm.Main_menu();
        }
