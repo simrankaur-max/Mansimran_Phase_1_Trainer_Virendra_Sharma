@@ -35,7 +35,7 @@ public class Lockedme {
         case 1: System.out.println("Current File Name"); 
                 CurrentFile_Name(); 
                 break;  
-        case 2: System.out.println("More");  
+        case 2: System.out.println("Sub MENU");  
                 Sub_Menu();
                 break;
         case 3: System.out.println("Exit");  
