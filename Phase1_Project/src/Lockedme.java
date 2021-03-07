@@ -103,7 +103,7 @@ public class Lockedme {
     	 System.out.println("Please Enter File Name you want to add:");
     	 try {
     		 
-    	 String ad=sc.next().toLowerCase().trim();
+    	 String ad=sc.next();
     	 String[] s=f.list();
     	 File file = new File("C:\\Users\\Mansimran Kaur\\Documents\\"+ ad);
     	 boolean result;   
@@ -171,7 +171,7 @@ public class Lockedme {
     	 String output=sc.next();
     	 switch(output){    
          case "yes": System.out.println("Thankyou");  
-                 break;  
+                 System.exit(0); 
          case "no":  
                  Main_menu();
                  break;
