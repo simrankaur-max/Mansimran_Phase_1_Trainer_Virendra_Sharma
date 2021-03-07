@@ -103,14 +103,14 @@ public class Lockedme {
     	 System.out.println("Please Enter File Name you want to add:");
     	 try {
     		 
-    	 String ad=sc.next().toLowerCase().trim();
+    	 String ad=sc.next();
     	 String[] s=f.list();
     	 File file = new File("C:\\Users\\Mansimran Kaur\\Documents\\"+ ad);
     	 boolean result;   
     		 result = file.createNewFile(); 
     	 if(result)   
     	 {  
-    	 System.out.println("file"+ ad+ " Added to : "+file.getCanonicalPath()); 
+    	 System.out.println("file "+ ad+ " Added to : "+file.getCanonicalPath()); 
     	 }  
     	 else  
     	 {  
@@ -133,7 +133,7 @@ public class Lockedme {
     	        String[] list = Mainpath.list();
     	        for (String file: list) {
     	            if (ad.equals(file) && filepath.delete()) {
-    	                System.out.println("File " + ad + " deleted from " + Mainpath);
+    	                System.out.println("File " + ad + " deleted from " + filepath);
     	                Sub_Menu();
     	            }
     	        }
@@ -154,7 +154,7 @@ public class Lockedme {
     	 String[] list = Mainpath.list();
          for (String file: list) {
              if (ad.equals(file)) {
-                 System.out.println("FOUND : File " + ad + " exists at " + Mainpath);
+                 System.out.println("FOUND : File " + ad + " exists at " + filepath);
                  Sub_Menu();
              }
          }
@@ -171,12 +171,12 @@ public class Lockedme {
     	 String output=sc.next();
     	 switch(output){    
          case "yes": System.out.println("Thankyou");  
-                 break;  
+                 System.exit(0);  
          case "no":  
                  Main_menu();
                  break;
          default: System.out.println("to confirm please press yes or no"); 
-        Exit();       
+                  Exit();       
      }
      }
 }
